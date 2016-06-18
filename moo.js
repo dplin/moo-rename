@@ -6,7 +6,7 @@ var path = require('path');
 var fileSet = require('file-set');
 
 program
-  .version('0.0.7')
+  .version('0.0.8')
   .arguments('<pattern>')
   .description('Simple tool to rename all your files for the web.')
   .action(function(pattern){
@@ -31,7 +31,7 @@ if (FileSet.files.length > 0){
         console.log(filename);
 
         // Execute rename
-        //fs.renameSync(file, dir + "/" + filename);
+        fs.renameSync(file, dir + "/" + filename);
     });
 }
 
@@ -46,7 +46,7 @@ if (FileSet.dirs.length > 0){
             console.log(filename);
 
             // Execute rename
-            //fs.renameSync(file, dir + "/" + filename);
+            fs.renameSync(file, dir + "/" + filename);
         });
     });
 }
