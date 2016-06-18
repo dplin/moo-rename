@@ -1,0 +1,22 @@
+{
+  "name": "moo-rename",
+  "version": "0.0.7",
+  "description": "A simple tool to rename files for the web.",
+  "author": "Derek Lin",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "file-set": "^1.0.0"
+  },
+  "bin": {
+    "moo": "moo.js"
+  },
+  "main": "moo.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
