@@ -29,6 +29,32 @@ npm install -g moo-rename
 
 ## Usage
 
+Rename PDF files in 'pdfs' folder.
 ```sh
 moo "pdfs\*.pdf"
+```
+
+Rename all files in 'pdfs' folder.
+```sh
+moo "pdfs\*"
+```
+
+Rename all files in current folder.
+```sh
+moo "."
+```
+
+Rename all text files in current folder.
+```sh
+moo "*.txt"
+```
+
+Rename all files in 'pdfs' and all its sub-directories.
+```sh
+moo "pdfs\**\*"
+```
+
+Rename all PDFs in 'pdfs' and all its sub-directories.
+```sh
+moo "pdfs\**\*"
 ```

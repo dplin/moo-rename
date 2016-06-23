@@ -6,7 +6,7 @@ var path = require('path');
 var fileSet = require('file-set');
 
 program
-  .version('0.0.8')
+  .version('0.0.9')
   .arguments('<pattern>')
   .description('Simple tool to rename all your files for the web.')
   .action(function(pattern){
@@ -27,7 +27,7 @@ if (FileSet.files.length > 0){
     FileSet.files.forEach(function(file) {
         var dir = path.dirname(file);
         // remove or replace multiple space, dots, ampersand and brackets
-        var filename = removeDiacritics(path.basename(file).replace(/\s+/g,'-').replace(/\.(?=.*?\.)/g,'-').replace(/&/g,'and').replace(/\(/g,'').replace(/\)/g,'').toLowerCase());
+        var filename = removeDiacritics(path.basename(file).replace(/\s+/g,'-').replace(/\.(?=.*?\.)/g,'-').replace(/&/g,'and').replace(/\(/g,'').replace(/\)/g,'').replace(/-{2,}/g, '-').toLowerCase());
         console.log(filename);
 
         // Execute rename
@@ -42,7 +42,7 @@ if (FileSet.dirs.length > 0){
         nfs.files.forEach(function(file) {
             var dir = path.dirname(file);
             // remove or replace multiple space, dots, ampersand and brackets
-            var filename = removeDiacritics(path.basename(file).replace(/\s+/g,'-').replace(/\.(?=.*?\.)/g,'-').replace(/&/g,'and').replace(/\(/g,'').replace(/\)/g,'').toLowerCase());
+            var filename = removeDiacritics(path.basename(file).replace(/\s+/g,'-').replace(/\.(?=.*?\.)/g,'-').replace(/&/g,'and').replace(/\(/g,'').replace(/\)/g,'').replace(/-{2,}/g, '-').toLowerCase());
             console.log(filename);
 
             // Execute rename
